@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { CheckCircle2, Sparkles } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { heroStats, motionNotes } from "../data/site-data";
 import { GooglePlayButton } from "./GooglePlayButton";
 import { TypingHeadline } from "./TypingHeadline";
@@ -17,16 +17,6 @@ export function HeroScene() {
 
 			<div className="hero-layout">
 				<div className="hero-copy">
-					<motion.div
-						className="eyebrow"
-						initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-						animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-					>
-						<Sparkles size={16} aria-hidden="true" />
-						AI WhatsApp bot for SMBs
-					</motion.div>
-
 					<motion.h1
 						initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
 						animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}

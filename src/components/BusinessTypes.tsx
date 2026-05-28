@@ -1,11 +1,30 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { businessStats, businessTypes } from "../data/site-data";
 import { Reveal } from "./Reveal";
 
 export function BusinessTypes() {
 	const prefersReducedMotion = useReducedMotion();
-	const animatedTypes = [...businessTypes, ...businessTypes];
+	const [activeIndex, setActiveIndex] = useState(0);
+	const focusItems = useMemo(() => {
+		const offsets = [-2, -1, 0, 1, 2];
+
+		return offsets.map((offset) => {
+			const index = (activeIndex + offset + businessTypes.length) % businessTypes.length;
+			return { offset, type: businessTypes[index] };
+		});
+	}, [activeIndex]);
+
+	useEffect(() => {
+		if (prefersReducedMotion) return undefined;
+
+		const timer = window.setInterval(() => {
+			setActiveIndex((current) => (current + 1) % businessTypes.length);
+		}, 2200);
+
+		return () => window.clearInterval(timer);
+	}, [prefersReducedMotion]);
 
 	return (
 		<section className="section brands-section" id="brands">
@@ -31,18 +50,30 @@ export function BusinessTypes() {
 				</Reveal>
 
 				<Reveal className="brand-motion-panel">
-					<div className="brand-rail-mask">
-						<motion.div
-							className="brand-rail"
-							animate={prefersReducedMotion ? undefined : { y: ["0%", "-50%"] }}
-							transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-						>
-							{animatedTypes.map((type, index) => (
-								<span className={index % 3 === 0 ? "is-strong" : ""} key={`${type}-${index}`}>
-									{type}
-								</span>
-							))}
-						</motion.div>
+					<div className="brand-focus-stage" aria-live="polite">
+						<AnimatePresence mode="popLayout" initial={false}>
+							<motion.div
+								className="brand-focus-stack"
+								key={activeIndex}
+								initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+								animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+								exit={prefersReducedMotion ? undefined : { opacity: 0, y: -28 }}
+								transition={{ duration: 0.46, ease: [0.22, 1, 0.36, 1] }}
+							>
+								{focusItems.map((item) => (
+									<span
+										className={item.offset === 0 ? "is-active" : ""}
+										key={`${item.type}-${item.offset}`}
+									>
+										{item.type}
+									</span>
+								))}
+							</motion.div>
+						</AnimatePresence>
+					</div>
+					<div className="brand-focus-count">
+						<span>{String(activeIndex + 1).padStart(2, "0")}</span>
+						<small>/ {businessTypes.length} SMB types</small>
 					</div>
 					<div className="brand-live-card">
 						<MessageCircle size={20} aria-hidden="true" />

@@ -60,7 +60,7 @@ export const setupSteps = [
 		kicker: "01",
 		title: "Tell Sabi about your business",
 		copy: "Add your business name, website, or manual details so Sabi understands your products, services, policies, and customer language.",
-		image: "./assets/screens/welcome.png",
+		image: "./assets/screens/bot-setup-profile.png",
 	},
 	{
 		icon: MessageCircle,
@@ -174,15 +174,39 @@ export const motionNotes = [
 
 export const businessTypes = [
 	"Fashion sellers",
-	"Beauty studios",
+	"Beauty & skincare",
+	"Hair vendors",
 	"Food vendors",
+	"Restaurants",
+	"Bakers",
+	"Supermarkets",
+	"Pharmacies",
 	"Health clinics",
+	"Dental practices",
 	"Repair shops",
+	"Auto services",
 	"Home services",
+	"Cleaning services",
+	"Laundry services",
 	"Coaches",
+	"Tutors",
+	"Course creators",
 	"Online stores",
+	"Gadget sellers",
+	"Thrift sellers",
+	"Boutiques",
 	"Real estate teams",
+	"Short-let hosts",
+	"Hotels",
 	"Event vendors",
+	"Photographers",
+	"Travel agents",
+	"Logistics teams",
+	"Agencies",
+	"Accountants",
+	"Legal offices",
+	"Interior decorators",
+	"Furniture makers",
 ];
 
 export const businessStats = [
@@ -208,13 +232,53 @@ export const faqItems = [
 			"Yes. You can update your business knowledge, refresh the bot, test replies, and pause AI handling when you want to take over the chat yourself.",
 	},
 	{
+		question: "Can a customer still talk to a human?",
+		answer:
+			"Yes. Sabi is built for controlled automation. The assistant handles routine questions, while you can step in when a chat needs personal judgment or a human touch.",
+	},
+	{
+		question: "What business details should I add?",
+		answer:
+			"Add your products or services, prices, delivery areas, opening hours, refund policy, booking process, FAQs, and anything customers usually ask before buying.",
+	},
+	{
+		question: "Can I update prices or policies later?",
+		answer:
+			"Yes. When your offer changes, update your business knowledge and refresh the bot so customer replies stay aligned with your current details.",
+	},
+	{
+		question: "Does Sabi replace my WhatsApp Business account?",
+		answer:
+			"No. Sabi connects to your WhatsApp Business flow so your customer conversations can be answered faster while you still keep owner control.",
+	},
+	{
 		question: "Is Sabi only for Nigerian businesses?",
 		answer:
 			"No. Sabi is useful for Nigerian SMBs and global SMBs that already sell, support, or follow up with customers on WhatsApp.",
 	},
 	{
+		question: "Who is Sabi best for?",
+		answer:
+			"Sabi fits chat-first SMBs like fashion sellers, beauty brands, food vendors, clinics, real estate teams, repair shops, service providers, agencies, and online stores.",
+	},
+	{
 		question: "How does the free trial work?",
 		answer:
 			"Starter and Pro both include a 1-week free trial, so you can create the bot, connect your flow, and test if it fits your business before committing.",
+	},
+	{
+		question: "Where do I pay for Sabi?",
+		answer:
+			"Payment happens inside the app. Pricing is shown based on your location where supported, including naira pricing for Nigerian users.",
+	},
+	{
+		question: "What is the difference between Starter and Pro?",
+		answer:
+			"Starter is for smaller teams getting started with limited monthly AI replies and brain refreshes. Pro is for growing businesses that need higher volume and unlimited refreshes.",
+	},
+	{
+		question: "What happens if the assistant does not know an answer?",
+		answer:
+			"You can improve the bot by adding the missing detail to your business knowledge, refreshing the brain, and taking over the chat when needed.",
 	},
 ];

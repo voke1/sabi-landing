@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import { Check, Sparkles } from "lucide-react";
 import { pricingPlans } from "../data/site-data";
-import { detectPricingLocation, formatMonthlyPrice } from "../lib/localized-pricing";
+import { detectBestPricingLocation, detectPricingLocation, formatMonthlyPrice } from "../lib/localized-pricing";
 import { Reveal } from "./Reveal";
 
 export function PricingSection() {
 	const [pricingLocation, setPricingLocation] = useState(() => detectPricingLocation());
 
 	useEffect(() => {
-		setPricingLocation(detectPricingLocation());
+		let isMounted = true;
+
+		detectBestPricingLocation()
+			.then((location) => {
+				if (isMounted) setPricingLocation(location);
+			});
+
+		return () => {
+			isMounted = false;
+		};
 	}, []);
 
 	return (
@@ -49,11 +58,6 @@ export function PricingSection() {
 						</Reveal>
 					))}
 				</div>
-
-				<p className="pricing-note">
-					Showing {pricingLocation.currency} for {pricingLocation.regionLabel} based on your browser region. Final
-					billing is handled in the Sabi app.
-				</p>
 			</div>
 		</section>
 	);

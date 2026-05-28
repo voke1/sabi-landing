@@ -1,6 +1,7 @@
 import { AmbientBackground } from "./components/AmbientBackground";
 import { BusinessTypes } from "./components/BusinessTypes";
 import { CommandCenter } from "./components/CommandCenter";
+import { ContactSection } from "./components/ContactSection";
 import { FAQSection } from "./components/FAQSection";
 import { FinalCta } from "./components/FinalCta";
 import { HeroScene } from "./components/HeroScene";
@@ -21,6 +22,7 @@ export function App() {
 				<PricingSection />
 				<FAQSection />
 				<FinalCta />
+				<ContactSection />
 			</main>
 			<footer className="site-footer">
 				<span>Sabi</span>
