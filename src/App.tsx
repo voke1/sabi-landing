@@ -7,27 +7,34 @@ import { FinalCta } from "./components/FinalCta";
 import { HeroScene } from "./components/HeroScene";
 import { NavBar } from "./components/NavBar";
 import { PricingSection } from "./components/PricingSection";
+import { RefundPolicyPage } from "./components/RefundPolicyPage";
 import { SetupSteps } from "./components/SetupSteps";
+import { SiteFooter } from "./components/SiteFooter";
+
+function HomePage() {
+	return (
+		<main>
+			<HeroScene />
+			<SetupSteps />
+			<CommandCenter />
+			<BusinessTypes />
+			<PricingSection />
+			<FAQSection />
+			<FinalCta />
+			<ContactSection />
+		</main>
+	);
+}
 
 export function App() {
+	const isRefundPolicyPage = typeof window !== "undefined" && window.location.pathname === "/refund-policy";
+
 	return (
 		<>
 			<AmbientBackground />
 			<NavBar />
-			<main>
-				<HeroScene />
-				<SetupSteps />
-				<CommandCenter />
-				<BusinessTypes />
-				<PricingSection />
-				<FAQSection />
-				<FinalCta />
-				<ContactSection />
-			</main>
-			<footer className="site-footer">
-				<span>Sabi</span>
-				<p>AI WhatsApp assistant for global SMBs.</p>
-			</footer>
+			{isRefundPolicyPage ? <RefundPolicyPage /> : <HomePage />}
+			<SiteFooter />
 		</>
 	);
 }

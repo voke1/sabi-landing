@@ -2088,12 +2088,120 @@ h3 {
 }
 
 .site-footer span {
+	display: block;
+	margin-bottom: 4px;
 	color: var(--color-foreground);
 	font-weight: 900;
 }
 
 .site-footer p {
 	margin: 0;
+}
+
+.footer-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	color: var(--color-play-store);
+	font-size: 14px;
+	font-weight: 800;
+}
+
+.footer-links a {
+	transition:
+		color 180ms ease,
+		transform 180ms ease;
+}
+
+.footer-links a:hover {
+	color: var(--color-primary);
+	transform: translateY(-1px);
+}
+
+.policy-page {
+	position: relative;
+	z-index: 2;
+	background: var(--color-canvas);
+	color: var(--color-foreground);
+}
+
+.policy-hero {
+	padding: 148px 24px 58px;
+	background:
+		linear-gradient(rgba(18, 140, 126, 0.05) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(18, 140, 126, 0.05) 1px, transparent 1px),
+		var(--color-canvas);
+	background-size: 64px 64px;
+}
+
+.policy-container {
+	width: min(100%, 880px);
+	margin: 0 auto;
+}
+
+.policy-hero h1 {
+	max-width: 760px;
+	margin-bottom: 18px;
+	font-size: 68px;
+}
+
+.policy-hero p {
+	max-width: 760px;
+	margin-bottom: 20px;
+	color: var(--color-muted);
+	font-size: 20px;
+	line-height: 1.7;
+}
+
+.policy-date {
+	display: inline-flex;
+	border: 1px solid rgba(18, 140, 126, 0.16);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.6);
+	color: var(--color-primary);
+	padding: 9px 12px;
+	font-size: 13px;
+	font-weight: 900;
+}
+
+.policy-content {
+	padding: 0 24px 88px;
+}
+
+.policy-card {
+	border: 1px solid var(--color-canvas-border);
+	border-radius: var(--radius);
+	background: rgba(250, 249, 245, 0.9);
+	box-shadow: var(--shadow-soft);
+	padding: 38px;
+}
+
+.policy-card h2 {
+	margin: 34px 0 12px;
+	font-size: 25px;
+}
+
+.policy-card h2:first-child {
+	margin-top: 0;
+}
+
+.policy-card p {
+	margin-bottom: 0;
+	color: var(--color-muted);
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+.policy-card a:not(.primary-button):not(.secondary-button) {
+	color: var(--color-primary);
+	font-weight: 800;
+}
+
+.policy-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 34px;
 }
 
 @keyframes ambientLine {
@@ -2442,6 +2550,18 @@ h3 {
 	.site-footer {
 		align-items: start;
 		flex-direction: column;
+	}
+
+	.policy-hero {
+		padding-top: 124px;
+	}
+
+	.policy-hero h1 {
+		font-size: 44px;
+	}
+
+	.policy-card {
+		padding: 24px;
 	}
 
 	.stitch-feature-frame {

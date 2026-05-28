@@ -16,6 +16,10 @@ import {
 } from "lucide-react";
 
 export const playStoreUrl = "https://play.google.com/store/apps/details?id=com.voke.sabi";
+export const termsUrl = "https://sites.google.com/view/sabitermsofservice/home";
+export const privacyUrl = "https://sites.google.com/view/sabiprivacypolicy/home";
+export const refundPolicyUrl = "/refund-policy";
+export const supportEmail = "hello@go2sabi.com";
 
 export const navItems = [
 	{ label: "Product", href: "#product" },

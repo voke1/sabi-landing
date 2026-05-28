@@ -2,9 +2,12 @@ import { ArrowUpRight, Menu } from "lucide-react";
 import { navItems, playStoreUrl } from "../data/site-data";
 
 export function NavBar() {
+	const isHomePage = typeof window === "undefined" || window.location.pathname === "/";
+	const getSectionHref = (href: string) => (isHomePage ? href : `/${href}`);
+
 	return (
 		<header className="site-nav" aria-label="Main navigation">
-			<a className="brand-lockup" href="#top" aria-label="Sabi home">
+			<a className="brand-lockup" href={isHomePage ? "#top" : "/"} aria-label="Sabi home">
 				<span className="sabi-wordmark" aria-label="Sabi">
 					SABI
 					<span aria-hidden="true" />
@@ -13,7 +16,7 @@ export function NavBar() {
 
 			<nav className="nav-links" aria-label="Page sections">
 				{navItems.map((item) => (
-					<a key={item.href} href={item.href}>
+					<a key={item.href} href={getSectionHref(item.href)}>
 						{item.label}
 					</a>
 				))}
