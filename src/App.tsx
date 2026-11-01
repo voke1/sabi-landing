@@ -27,7 +27,8 @@ function HomePage() {
 }
 
 export function App() {
-	const isRefundPolicyPage = typeof window !== "undefined" && window.location.pathname === "/refund-policy";
+	const isRefundPolicyPage =
+		typeof window !== "undefined" && window.location.pathname.replace(/\/+$/, "") === "/refund-policy";
 
 	return (
 		<>

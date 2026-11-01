@@ -446,6 +446,10 @@ button {
 	display: none;
 }
 
+.nav-mobile-download {
+	display: none;
+}
+
 .hero-section {
 	position: relative;
 	display: grid;
@@ -2402,6 +2406,27 @@ h3 {
 	.nav-links,
 	.nav-cta {
 		display: none;
+	}
+
+	.nav-links-open {
+		position: absolute;
+		top: calc(100% + 8px);
+		left: 0;
+		right: 0;
+		display: flex;
+		align-items: stretch;
+		flex-direction: column;
+		gap: 8px;
+		border: 1px solid rgba(222, 215, 198, 0.78);
+		border-radius: var(--radius);
+		background: var(--color-canvas);
+		box-shadow: var(--shadow-tight);
+		padding: 14px 18px;
+	}
+
+	.nav-mobile-download {
+		display: inline-flex;
+		color: var(--color-primary);
 	}
 
 	.mobile-menu {

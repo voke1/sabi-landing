@@ -25,7 +25,7 @@ export function PricingSection() {
 			<div className="section-inner">
 				<Reveal className="section-heading">
 					<span className="eyebrow light">Simple pricing</span>
-					<h2>Start with a 1-week free trial.</h2>
+					<h2>Start with a free trial.</h2>
 					<p>Pick a plan in Sabi, test the bot, and pay securely inside the app when you are ready.</p>
 				</Reveal>
 

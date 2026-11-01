@@ -27,7 +27,7 @@ export function RefundPolicyPage() {
 
 					<h2>2. Free Trial</h2>
 					<p>
-						Sabi may offer a 1-week free trial for eligible plans. You can test the product during the trial
+						Sabi may offer a free trial for eligible plans. You can test the product during the trial
 						period before a paid subscription begins. If you do not want to be charged, cancel before the
 						trial ends.
 					</p>

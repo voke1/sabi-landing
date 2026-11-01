@@ -18,7 +18,7 @@ import {
 export const playStoreUrl = "https://play.google.com/store/apps/details?id=com.voke.sabi";
 export const termsUrl = "https://sites.google.com/view/sabitermsofservice/home";
 export const privacyUrl = "https://sites.google.com/view/sabiprivacypolicy/home";
-export const refundPolicyUrl = "/refund-policy";
+export const refundPolicyUrl = "/refund-policy/";
 export const supportEmail = "hello@go2sabi.com";
 
 export const navItems = [
@@ -116,10 +116,10 @@ export const pricingPlans = [
 	{
 		name: "Starter",
 		monthlyUsd: 10,
-		monthlyNgn: 5000,
+		monthlyNgn: 6000,
 		period: "/mo",
 		description: "For small teams launching their first AI WhatsApp assistant.",
-		features: ["1-week free trial", "500 AI replies/month", "2 brain refreshes/month"],
+		features: ["Free trial", "500 AI replies/month", "2 brain refreshes/month"],
 		featured: false,
 	},
 	{
@@ -128,7 +128,7 @@ export const pricingPlans = [
 		monthlyNgn: 20000,
 		period: "/mo",
 		description: "For growing SMBs with more customer volume and bot memory needs.",
-		features: ["1-week free trial", "Unlimited AI replies/month", "Unlimited brain refreshes/month"],
+		features: ["Free trial", "Unlimited AI replies/month", "Unlimited brain refreshes/month"],
 		featured: true,
 	},
 ];
@@ -216,7 +216,7 @@ export const businessTypes = [
 export const businessStats = [
 	{ value: "24/7", label: "customer replies" },
 	{ value: "0.4s", label: "AI-style response feel" },
-	{ value: "1 week", label: "free trial" },
+	{ value: "Free", label: "trial available" },
 ];
 
 export const faqItems = [
@@ -268,7 +268,7 @@ export const faqItems = [
 	{
 		question: "How does the free trial work?",
 		answer:
-			"Starter and Pro both include a 1-week free trial, so you can create the bot, connect your flow, and test if it fits your business before committing.",
+			"Starter and Pro offer a free trial, so you can create the bot, connect your flow, and test if it fits your business before committing.",
 	},
 	{
 		question: "Where do I pay for Sabi?",
